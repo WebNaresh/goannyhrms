@@ -41,7 +41,6 @@ export interface BaseInputProps {
     | "text-area"
     | "date"
     | "checkbox";
-  // eslint-disable-next-line
   form: any;
   className?: string;
   disabled?: boolean;
@@ -53,7 +52,7 @@ export interface InputFieldProps extends BaseInputProps {
   async_function?: (
     input: string
   ) => Promise<{ value: string; label: string }[]>;
-  Icon?: LucideIcon;
+  Icon: LucideIcon;
   iconClassName?: string;
 }
 
@@ -79,12 +78,6 @@ const InputField: FC<InputFieldProps> = (props) => {
     Icon,
     iconClassName,
   } = props;
-
-  // Check if the field is required based on the validation schema
-  const isRequired = form?.schema?.shape?.[name]?._def?.checks?.some(
-    // eslint-disable-next-line
-    (check: any) => check.kind === "min" || check.kind === "required"
-  );
 
   if (type === "OTP") {
     return <InputOTPController {...props} />;
@@ -123,14 +116,7 @@ const InputField: FC<InputFieldProps> = (props) => {
         <FormItem
           className={`sm:max-w-[300px] sm:min-w-[250px] min-w-[70vw] ${className}`}
         >
-          <FormLabel
-            className={cn(
-              isRequired &&
-                "after:content-['*'] after:ml-0.5 after:text-red-500"
-            )}
-          >
-            {label}
-          </FormLabel>
+          <FormLabel>{label}</FormLabel>
           <FormControl>
             <div className="relative">
               {Icon && (
@@ -147,7 +133,7 @@ const InputField: FC<InputFieldProps> = (props) => {
                 autoComplete={autoComplete}
                 size={6}
                 onWheel={(e) => e.currentTarget.blur()}
-                className={cn("dark:focus:ring-white h-11", Icon && "pl-10")}
+                className={cn("dark:focus:ring-white h-11", "pl-10")}
                 type={type}
                 placeholder={placeholder}
                 {...field}
