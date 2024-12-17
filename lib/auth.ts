@@ -84,6 +84,12 @@ export const authOptions = NextAuth({
         async signIn({ user, account, profile, email, credentials }) {
             return true;
         },
+        async redirect({ url, baseUrl, }) {
+            console.log(`🚀 ~ file: auth.ts:88 ~ url:`, url)
+            console.log(`🚀 ~ file: auth.ts:88 ~ baseUrl:`, baseUrl)
+            return baseUrl;
+        }
+
     }
 })
 
