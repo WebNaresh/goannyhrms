@@ -38,6 +38,7 @@ const InputForm = (props: Props) => {
       await signIn("credentials", {
         email: data.email,
         password: data.password,
+        redirectTo: "/dashboard",
       });
     } catch (error) {
       console.log(`🚀 ~ file: form.tsx:41 ~ error:`, error);

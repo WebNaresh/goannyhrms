@@ -21,7 +21,7 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-      <Card className="w-full max-w-6xl grid md:grid-cols-2 overflow-hidden h-fit">
+      <Card className="w-full max-w-6xl grid md:grid-cols-2 overflow-hidden h-[650px]">
         <div className="p-8 pt-12 flex justify-center">
           <InputForm />
         </div>

@@ -2,87 +2,27 @@ import { prisma } from '@/lib/prisma';
 import bcrypt from 'bcrypt';
 import { NextResponse } from 'next/server';
 
-/**
- * @swagger
- * /api/v1/super_admin:
- *   post:
- *     summary: Create a new super admin
- *     tags: [SuperAdmin]
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               first_name:
- *                 type: string
- *                 example: "Super"
- *               last_name:
- *                 type: string
- *                 example: "Admin"
- *               email:
- *                 type: string
- *                 example: "sa@gmail.com"
- *               phone_no:
- *                 type: string
- *                 example: "+1234567890"
- *               password:
- *                 type: string
- *                 example: "Pass@123"
- *               gender:
- *                 type: string
- *                 example: "Male"
- *               address:
- *                 type: string
- *                 example: "123 Main St, Anytown, USA"
- *               citizenship:
- *                 type: string
- *                 example: "USA"
- *               date_of_birth:
- *                 type: string
- *                 format: date
- *                 example: "1990-01-01"
- *     responses:
- *       201:
- *         description: Super admin created successfully
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 id:
- *                   type: string
- *                 first_name:
- *                   type: string
- *                 last_name:
- *                   type: string
- *                 email:
- *                   type: string
- *                 phone_no:
- *                   type: string
- *                 gender:
- *                   type: string
- *                 address:
- *                   type: string
- *                 citizenship:
- *                   type: string
- *                 date_of_birth:
- *                   type: string
- *                   format: date
- *                 role:
- *                   type: string
- *                 is_completed_verification:
- *                   type: boolean
- *       500:
- *         description: Error creating super admin
- */
+const data = {
+    "first_name": "Super",
+    "last_name": "Admin",
+    "email": "sa@gmail.com",
+    "phone_no": "+1234567890",
+    "password": "Pass@123",
+    "gender": "Male",
+    "address": "Pune",
+    "citizenship": "Indian",
+    "date_of_birth": "1990-01-01"
+
+
+}
 export async function POST(request: Request) {
     try {
         const body = await request.json();
+        console.log(`🚀 ~ file: route.ts:97 ~ body:`, body)
         const { first_name, last_name, email, phone_no, password, gender, address, citizenship, date_of_birth } = body;
 
         const user = await prisma.user.findFirst({ where: { email } });
+        console.log(`🚀 ~ file: route.ts:25 ~ user:`, user)
         if (user) {
             throw new Error('User already exists');
         }
@@ -110,8 +50,8 @@ export async function POST(request: Request) {
         return NextResponse.json({
             message: 'Super admin created successfully',
         }, { status: 201 });
-    } catch (error) {
-        console.log(`🚀 ~ file: route.ts:20 ~ error:`, error);
+    } catch (error: any) {
+        console.log(`🚀 ~ file: route.ts:20 ~ error:`, error.message);
         return NextResponse.json({ error: 'Error creating super admin' }, { status: 500 });
     }
 }
