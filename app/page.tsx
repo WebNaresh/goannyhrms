@@ -8,11 +8,8 @@ import {
 import { Check } from "lucide-react";
 import { NextPage } from "next";
 import Image from "next/image";
-import GoannySvg, {
-  InterestedSvg,
-  PopularPlanSvg,
-  UnderlineSvg,
-} from "./svg/goanny_svg";
+import TestimonialsCarousel from "./_components/testimonial";
+import GoannySvg, { InterestedSvg, UnderlineSvg } from "./svg/goanny_svg";
 
 interface Props {}
 
@@ -83,6 +80,7 @@ const Page: NextPage<Props> = async ({}) => {
           />
         </div>
       </section>
+      <TestimonialsCarousel />
       <div className="min-h-screen bg-zinc-900 text-white p-8">
         <div className="max-w-6xl mx-auto flex">
           <div>
@@ -145,7 +143,6 @@ const Page: NextPage<Props> = async ({}) => {
               </CardFooter>
             </Card>
 
-            <PopularPlanSvg />
             {/* Pro Plan */}
             <Card className="bg-[#1F2937] border-0 relative overflow-hidden">
               <div className="absolute -right-10 top-5 rotate-45 bg-[#2563EB] px-12 py-1 text-sm">
@@ -184,6 +181,108 @@ const Page: NextPage<Props> = async ({}) => {
           </div>
         </div>
       </div>
+      <main className="flex-1 container mx-auto px-4 py-12 flex flex-col items-center justify-center text-center max-w-4xl">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+          Are you ready to feel{" "}
+          <span className="text-blue-600 relative">
+            the Ease
+            <div className="absolute w-full h-1 bg-blue-600 bottom-0 left-0 transform translate-y-1"></div>
+          </span>{" "}
+          of managing your business?
+        </h1>
+        <p className="text-gray-500 text-lg md:text-xl mb-12 max-w-3xl">
+          we guarantee that you will be satisfied with our platform which has
+          many interesting features and can make it easier to manage business
+          and internet games
+        </p>
+        <Button
+          size="lg"
+          className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6 rounded-xl"
+        >
+          Try free for 12 days
+        </Button>
+      </main>
+
+      {/* Footer */}
+      <footer className="border-t">
+        <div className="container mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <p className="text-gray-600 max-w-xs">
+              Website and application-based human resource management platform
+              for HR
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-semibold text-xl mb-4 text-gray-800">
+              Social Media
+            </h2>
+            <ul className="space-y-2">
+              <li>
+                <a href="#" className="text-gray-600 hover:text-gray-900">
+                  Dribbble
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-gray-900">
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-gray-900">
+                  Behance
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="font-semibold text-xl mb-4 text-gray-800">
+              About us
+            </h2>
+            <ul className="space-y-2">
+              <li>
+                <a href="#" className="text-gray-600 hover:text-gray-900">
+                  Feature
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-gray-900">
+                  Testimonials
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-gray-900">
+                  Pricing
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="font-semibold text-xl mb-4 text-gray-800">
+              Contact
+            </h2>
+            <ul className="space-y-2">
+              <li>
+                <a href="#" className="text-gray-600 hover:text-gray-900">
+                  Affiliate program
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-gray-900">
+                  Become Partner
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-gray-900">
+                  Contact Sales
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
     </>
   );
 };

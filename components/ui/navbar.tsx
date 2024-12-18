@@ -6,11 +6,15 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white flex justify-center items-center">
-      <div className="container flex h-16 items-center justify-between">
+    <header className="sticky top-0 z-50 w-full border-b bg-white flex justify-center items-center ">
+      <div className=" flex h-16 items-center justify-between container">
         <Link href="/" className="flex items-center space-x-2">
-          <Image src="/placeholder.svg" alt="Logo" width={40} height={40} />
-          <span className="text-xl font-bold">GOANNY HRMS</span>
+          <Image
+            src="/heropage/goanny.png"
+            alt="Logo"
+            width={120}
+            height={40}
+          />
         </Link>
 
         <nav className="hidden md:flex items-center space-x-6">
