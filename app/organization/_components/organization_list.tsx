@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -13,6 +15,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { MoreVertical } from "lucide-react";
+import Image from "next/image";
 
 const organizations = [
   {
@@ -66,10 +69,12 @@ export function OrganizationList() {
             <div className="flex items-start justify-between space-x-4 gap-4">
               <div className="flex items-center gap-4">
                 <div className="h-10 w-10 overflow-hidden rounded-md">
-                  <img
+                  <Image
                     alt={`${org.name} logo`}
                     className="h-full w-full object-cover"
                     src={org.logo}
+                    width={40}
+                    height={40}
                   />
                 </div>
                 <div>

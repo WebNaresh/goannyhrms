@@ -8,7 +8,11 @@ import {
 import { Check } from "lucide-react";
 import { NextPage } from "next";
 import Image from "next/image";
-import GoannySvg, { InterestedSvg, UnderlineSvg } from "./svg/goanny_svg";
+import GoannySvg, {
+  InterestedSvg,
+  PopularPlanSvg,
+  UnderlineSvg,
+} from "./svg/goanny_svg";
 
 interface Props {}
 
@@ -27,8 +31,8 @@ const Page: NextPage<Props> = async ({}) => {
             </span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-zinc-400">
-            Don't let your work be hampered by trivial matters. Increase your
-            work efficiency with our platform and feel the ease in managing
+            Don&apos;t let your work be hampered by trivial matters. Increase
+            your work efficiency with our platform and feel the ease in managing
             employees
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-6">
@@ -88,8 +92,8 @@ const Page: NextPage<Props> = async ({}) => {
                 The best feature with the best pricing package
               </h1>
               <p className="text-zinc-400">
-                let's see the purchase packages we offer and choose according to
-                your needs
+                let&apos;s see the purchase packages we offer and choose
+                according to your needs
               </p>
             </div>
 
@@ -111,7 +115,7 @@ const Page: NextPage<Props> = async ({}) => {
           </div>
 
           {/* Pricing Cards */}
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 relative">
             {/* Basic Plan */}
             <Card className="bg-[#2563EB] border-0 relative overflow-hidden">
               <CardHeader className="pb-4">
@@ -141,6 +145,7 @@ const Page: NextPage<Props> = async ({}) => {
               </CardFooter>
             </Card>
 
+            <PopularPlanSvg />
             {/* Pro Plan */}
             <Card className="bg-[#1F2937] border-0 relative overflow-hidden">
               <div className="absolute -right-10 top-5 rotate-45 bg-[#2563EB] px-12 py-1 text-sm">
