@@ -85,8 +85,8 @@ const Page: NextPage<Props> = async ({}) => {
       >
         <div className="mx-auto max-w-4xl space-y-12">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">
-            EasyHR was created to help HRD in managing work and employees in one
-            platform easily.
+            SMarTea was created to help HRD in managing work and employees in
+            one platform easily.
           </h2>
           <p className="text-2xl font-medium text-white/90">
             Provide the ultimate digital engagement experience from anywhere on
