@@ -93,7 +93,7 @@ export default function TestimonialsCarousel() {
                     }`}
                   >
                     <div className="absolute top-4 right-4 text-4xl opacity-20">
-                      "
+                      &quot;
                     </div>
                     <blockquote className="text-lg md:text-xl relative z-10">
                       {testimonial.quote}
