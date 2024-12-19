@@ -35,8 +35,8 @@ const Page: NextPage<Props> = async ({}) => {
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-zinc-400">
             Don&apos;t let your work be hampered by trivial matters. Increase
-            your work efficiency with our platform and feel the ease in managing
-            employees
+            your work efficiency with our platform and feel the SMarTea in
+            managing employees
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-6">
             <Button size="lg">Try free for 12 days</Button>
@@ -198,7 +198,7 @@ const Page: NextPage<Props> = async ({}) => {
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
           Are you ready to feel{" "}
           <span className="text-primary relative">
-            the Ease
+            the SMarTea
             <div className="absolute w-full h-1 bg-primary bottom-0 left-0 transform translate-y-1"></div>
           </span>{" "}
           of managing your business?
