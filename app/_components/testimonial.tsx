@@ -1,9 +1,9 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
+import TestimonialCard from "./testimonial-card";
 
 interface Testimonial {
   id: number;
@@ -43,7 +43,7 @@ export default function TestimonialsCarousel() {
 
   return (
     <div className="w-full bg-gray-950 px-4 py-16">
-      <div className="container mx-auto max-w-6xl">
+      <div className="">
         {/* Decorative elements */}
         <div className="relative">
           <div className="absolute -top-2 left-0">
@@ -78,28 +78,13 @@ export default function TestimonialsCarousel() {
 
         {/* Testimonials carousel */}
         <div className="relative">
-          <div className="overflow-hidden">
+          <div className="">
             <div
               className="flex transition-transform duration-300 ease-in-out"
               style={{ transform: `translateX(-${activeIndex * 100}%)` }}
             >
               {testimonials.map((testimonial, index) => (
-                <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
-                  <Card
-                    className={`p-8 relative ${
-                      index === activeIndex
-                        ? "bg-blue-600 text-white"
-                        : "bg-blue-950/50 text-gray-300"
-                    }`}
-                  >
-                    <div className="absolute top-4 right-4 text-4xl opacity-20">
-                      &quot;
-                    </div>
-                    <blockquote className="text-lg md:text-xl relative z-10">
-                      {testimonial.quote}
-                    </blockquote>
-                  </Card>
-                </div>
+                <TestimonialCard />
               ))}
             </div>
           </div>
@@ -117,15 +102,17 @@ export default function TestimonialsCarousel() {
 
             <div className="flex gap-2">
               {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveIndex(index)}
-                  className={`h-2 rounded-full transition-all ${
-                    index === activeIndex
-                      ? "w-8 bg-blue-600"
-                      : "w-2 bg-gray-600"
-                  }`}
-                />
+                <>
+                  <button
+                    key={index}
+                    onClick={() => setActiveIndex(index)}
+                    className={`h-2 rounded-full transition-all ${
+                      index === activeIndex
+                        ? "w-8 bg-primary"
+                        : "w-2 bg-gray-600"
+                    }`}
+                  />
+                </>
               ))}
             </div>
 
