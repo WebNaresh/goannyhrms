@@ -8,6 +8,7 @@ import {
 import { Check } from "lucide-react";
 import { NextPage } from "next";
 import Image from "next/image";
+import Navbar from "./_components/navbar";
 import TestimonialsCarousel from "./_components/testimonial";
 import GoannySvg, { InterestedSvg, UnderlineSvg } from "./svg/goanny_svg";
 
@@ -16,33 +17,7 @@ interface Props {}
 const Page: NextPage<Props> = async ({}) => {
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
-        <div className="container mx-auto flex justify-between items-center p-4">
-          <Image
-            src={"/smartea.png"}
-            alt="SmarTea HRMS"
-            width={100}
-            height={40}
-          />
-          <div className="space-x-4">
-            <a href="#hero" className="text-gray-700 hover:text-gray-900">
-              Home
-            </a>
-            <a href="#features" className="text-gray-700 hover:text-gray-900">
-              Features
-            </a>
-            <a href="#insights" className="text-gray-700 hover:text-gray-900">
-              Insights
-            </a>
-            <a href="#pricing" className="text-gray-700 hover:text-gray-900">
-              Pricing
-            </a>
-            <a href="#contact" className="text-gray-700 hover:text-gray-900">
-              Contact
-            </a>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       <section
         id="hero"
