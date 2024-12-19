@@ -91,12 +91,10 @@ export default function TestimonialsCarousel() {
           </div>
 
           {/* Navigation */}
-          <div className="flex items-center justify-center gap-4 mt-8">
+          <div className="flex items-center justify-center gap-12 mt-8">
             <Button
-              variant="ghost"
-              size="icon"
               onClick={previous}
-              className="text-white hover:bg-gray-800"
+              className="text-white rounded-full h-10 w-10"
               disabled={isAnimating}
             >
               <ChevronLeft className="h-6 w-6" />
@@ -115,10 +113,8 @@ export default function TestimonialsCarousel() {
             </div>
 
             <Button
-              variant="ghost"
-              size="icon"
-              onClick={next}
-              className="text-white hover:bg-gray-800"
+              onClick={previous}
+              className="text-white rounded-full h-10 w-10"
               disabled={isAnimating}
             >
               <ChevronRight className="h-6 w-6" />
