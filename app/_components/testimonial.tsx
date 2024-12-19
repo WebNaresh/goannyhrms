@@ -54,7 +54,7 @@ export default function TestimonialsCarousel() {
   useEffect(() => {
     const interval = setInterval(next, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [next]);
 
   return (
     <div className="w-full bg-gray-950 px-4 py-16">
@@ -64,7 +64,7 @@ export default function TestimonialsCarousel() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">
-            Our Customers' Kind Words
+            Our Customers&apos; Kind Words
           </h2>
           <p className="text-gray-400">
             Discover what they say about our platform after using it

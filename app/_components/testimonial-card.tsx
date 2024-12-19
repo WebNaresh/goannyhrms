@@ -15,14 +15,14 @@ export default function TestimonialCard({
 
         {/* Quote mark in top right */}
         <div className="absolute top-8 right-8 text-[#45CACA] text-6xl font-serif">
-          "
+          &quot;
         </div>
 
         {/* Testimonial text */}
         <div className="text-white text-3xl font-medium leading-tight">
-          <span className="text-4xl">"</span>
+          <span className="text-4xl">&quot;</span>
           {quote}
-          <span className="text-4xl">"</span>
+          <span className="text-4xl">&quot;</span>
         </div>
 
         {/* Author */}
