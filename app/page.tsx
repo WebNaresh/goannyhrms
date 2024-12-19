@@ -16,12 +16,43 @@ interface Props {}
 const Page: NextPage<Props> = async ({}) => {
   return (
     <>
-      <section className="relative overflow-clip bg-zinc-900 py-20 md:py-32 flex justify-center h-[870px]">
+      <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <div className="container mx-auto flex justify-between items-center p-4">
+          <Image
+            src={"/smartea.png"}
+            alt="SmarTea HRMS"
+            width={100}
+            height={40}
+          />
+          <div className="space-x-4">
+            <a href="#hero" className="text-gray-700 hover:text-gray-900">
+              Home
+            </a>
+            <a href="#features" className="text-gray-700 hover:text-gray-900">
+              Features
+            </a>
+            <a href="#insights" className="text-gray-700 hover:text-gray-900">
+              Insights
+            </a>
+            <a href="#pricing" className="text-gray-700 hover:text-gray-900">
+              Pricing
+            </a>
+            <a href="#contact" className="text-gray-700 hover:text-gray-900">
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <section
+        id="hero"
+        className="relative overflow-hidden bg-zinc-900 py-20 md:py-32 flex justify-center h-[870px]"
+      >
         <div className="container flex flex-col items-center text-center">
           <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-white sm:text-6xl">
             Improve your performance using{" "}
             <span className="relative">
-              Easy HR
+              SMarTea
               <span className="absolute bottom-0 left-0 right-0 h-1 ">
                 <UnderlineSvg />
               </span>
@@ -33,9 +64,7 @@ const Page: NextPage<Props> = async ({}) => {
             employees
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-6">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-              Try free for 12 days
-            </Button>
+            <Button size="lg">Try free for 12 days</Button>
             <Button size="lg" variant="secondary">
               Learn more
             </Button>
@@ -46,10 +75,14 @@ const Page: NextPage<Props> = async ({}) => {
           height={400}
           width={1200}
           alt="screenshot"
-          className="absolute top-[30rem] "
+          className="absolute top-[31rem] "
         />
       </section>
-      <section className="relative overflow-hidden bg-blue-600 px-6 py-24 text-center">
+
+      <section
+        id="features"
+        className="relative overflow-hidden bg-primary px-6 py-24 text-center"
+      >
         <div className="mx-auto max-w-4xl space-y-12">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">
             EasyHR was created to help HRD in managing work and employees in one
@@ -64,7 +97,7 @@ const Page: NextPage<Props> = async ({}) => {
       </section>
 
       {/* Insights Section */}
-      <section className="mt-24 text-center">
+      <section id="insights" className="mt-24 text-center">
         <h2 className="mx-auto max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl">
           Convert insight into data that contains information about the progress
           of your company
@@ -81,10 +114,12 @@ const Page: NextPage<Props> = async ({}) => {
         </div>
       </section>
       <TestimonialsCarousel />
-      <div className="min-h-screen bg-zinc-900 text-white p-8">
-        <div className="max-w-6xl mx-auto flex">
+      <section
+        id="pricing"
+        className="min-h-screen bg-zinc-900 text-white p-8 sm:flex "
+      >
+        <div className="max-w-6xl mx-auto flex flex-wrap lg:flex-nowrap">
           <div>
-            {/* Header Section */}
             <div className="space-y-4 max-w-2xl">
               <h1 className="text-5xl font-bold leading-tight">
                 The best feature with the best pricing package
@@ -98,7 +133,7 @@ const Page: NextPage<Props> = async ({}) => {
             {/* Toggle Switch */}
             <div className="flex items-center gap-4 relative w-fit">
               <div className="bg-zinc-800 p-1 rounded-full flex">
-                <button className="px-6 py-2 rounded-full transition-colors bg-[#2563EB]">
+                <button className="px-6 py-2 rounded-full transition-colors bg-primary">
                   Monthly
                 </button>
                 <button className="px-6 py-2 rounded-full transition-colors">
@@ -115,7 +150,7 @@ const Page: NextPage<Props> = async ({}) => {
           {/* Pricing Cards */}
           <div className="grid md:grid-cols-2 gap-6 relative">
             {/* Basic Plan */}
-            <Card className="bg-[#2563EB] border-0 relative overflow-hidden">
+            <Card className="bg-primary h-[400px]  border-0 flex flex-col relative !justify-between overflow-hidden">
               <CardHeader className="pb-4">
                 <h3 className="text-lg font-medium text-white">BASIC PLAN</h3>
                 <div className="text-5xl font-bold mt-2 text-white">FREE</div>
@@ -137,15 +172,15 @@ const Page: NextPage<Props> = async ({}) => {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button className="w-full mt-8 bg-[#1F2937] hover:bg-[#374151]">
+                <Button variant={"outline"} className="w-full mt-8 ">
                   Try for 12 days
                 </Button>
               </CardFooter>
             </Card>
 
             {/* Pro Plan */}
-            <Card className="bg-[#1F2937] border-0 relative overflow-hidden">
-              <div className="absolute -right-10 top-5 rotate-45 bg-[#2563EB] px-12 py-1 text-sm">
+            <Card className="bg-[#1F2937] flex flex-col justify-between h-[400px]  border-0 relative overflow-hidden">
+              <div className="absolute -right-10 top-5 rotate-45 bg-primary px-12 py-1 text-sm">
                 Most Popular package
               </div>
               <CardHeader className="pb-4">
@@ -171,22 +206,25 @@ const Page: NextPage<Props> = async ({}) => {
                     <span>1 TB cloud storage</span>
                   </li>
                 </ul>
-                <CardFooter>
-                  <Button className="w-full mt-8 bg-[#2563EB] hover:bg-[#1D4ED8]">
-                    Started Now
-                  </Button>
-                </CardFooter>
               </CardContent>
+              <CardFooter>
+                <Button className="w-full mt-8 bg-primary hover:bg-[#1D4ED8]">
+                  Started Now
+                </Button>
+              </CardFooter>
             </Card>
           </div>
         </div>
-      </div>
-      <main className="flex-1 container mx-auto px-4 py-12 flex flex-col items-center justify-center text-center max-w-4xl">
+      </section>
+      <main
+        id="contact"
+        className="flex-1 container mx-auto px-4 py-12 flex flex-col items-center justify-center text-center max-w-4xl"
+      >
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
           Are you ready to feel{" "}
-          <span className="text-blue-600 relative">
+          <span className="text-primary relative">
             the Ease
-            <div className="absolute w-full h-1 bg-blue-600 bottom-0 left-0 transform translate-y-1"></div>
+            <div className="absolute w-full h-1 bg-primary bottom-0 left-0 transform translate-y-1"></div>
           </span>{" "}
           of managing your business?
         </h1>
@@ -195,12 +233,7 @@ const Page: NextPage<Props> = async ({}) => {
           many interesting features and can make it easier to manage business
           and internet games
         </p>
-        <Button
-          size="lg"
-          className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6 rounded-xl"
-        >
-          Try free for 12 days
-        </Button>
+        <Button size="lg">Try free for 12 days</Button>
       </main>
 
       {/* Footer */}
