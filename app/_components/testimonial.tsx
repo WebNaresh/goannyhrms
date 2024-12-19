@@ -2,91 +2,92 @@
 
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useState } from "react";
-import TestimonialCard from "./testimonial-card";
+import { useEffect, useState } from "react";
+import { LeftCloudSvg, RightCloudSvg } from "../svg/goanny_svg";
+import TestimonialCard, { TestimonialCardProps } from "./testimonial-card";
 
-interface Testimonial {
-  id: number;
-  quote: string;
-  author?: string;
-}
-
-const testimonials: Testimonial[] = [
+const testimonials: TestimonialCardProps[] = [
   {
-    id: 1,
     quote:
-      "we really like this platform. our work becomes more efficient and orderly. highly recommended",
+      "We really like this platform. Our work becomes more efficient and orderly. Highly recommended!",
+    author: "John Doe, CEO",
   },
   {
-    id: 2,
     quote:
       "The platform has transformed how we work. Incredible efficiency gains!",
+    author: "Jane Smith, CTO",
   },
   {
-    id: 3,
     quote: "Best decision we made for our workflow. Highly recommended!",
+    author: "Mike Johnson, Project Manager",
   },
 ];
 
 export default function TestimonialsCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const next = () => {
-    setActiveIndex((current) => (current + 1) % testimonials.length);
+    if (!isAnimating) {
+      setIsAnimating(true);
+      setActiveIndex((current) => (current + 1) % testimonials.length);
+    }
   };
 
   const previous = () => {
-    setActiveIndex(
-      (current) => (current - 1 + testimonials.length) % testimonials.length
-    );
+    if (!isAnimating) {
+      setIsAnimating(true);
+      setActiveIndex(
+        (current) => (current - 1 + testimonials.length) % testimonials.length
+      );
+    }
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsAnimating(false);
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, [activeIndex]);
+
+  useEffect(() => {
+    const interval = setInterval(next, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="w-full bg-gray-950 px-4 py-16">
-      <div className="">
+      <div className="max-w-6xl mx-auto">
         {/* Decorative elements */}
-        <div className="relative">
-          <div className="absolute -top-2 left-0">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-              <path
-                d="M20 0C20 11.0457 11.0457 20 0 20"
-                stroke="rgba(255,255,255,0.1)"
-                strokeWidth="2"
-              />
-            </svg>
-          </div>
-          <div className="absolute -top-2 right-0">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-              <path
-                d="M20 0C20 11.0457 28.9543 20 40 20"
-                stroke="rgba(255,255,255,0.1)"
-                strokeWidth="2"
-              />
-            </svg>
-          </div>
-        </div>
 
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">
-            Our customer kind words
+            Our Customers' Kind Words
           </h2>
           <p className="text-gray-400">
-            Know what they say about our platfrom after they used it
+            Discover what they say about our platform after using it
           </p>
         </div>
 
         {/* Testimonials carousel */}
-        <div className="relative">
-          <div className="">
-            <div
-              className="flex transition-transform duration-300 ease-in-out"
-              style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-            >
-              {testimonials.map((testimonial, index) => (
-                <TestimonialCard />
-              ))}
-            </div>
+        <div className="relative overflow-hidden">
+          <div className="absolute">
+            <LeftCloudSvg className="absolute z-0 -top-8 -left-8 text-primary opacity-10" />
+          </div>
+          <div className="absolute right-0">
+            <RightCloudSvg className="absolute -bottom-8 -right-8 text-primary opacity-10" />
+          </div>
+          <div
+            className="flex transition-transform duration-300 ease-in-out"
+            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+          >
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="w-full flex-shrink-0">
+                <TestimonialCard {...testimonial} />
+              </div>
+            ))}
           </div>
 
           {/* Navigation */}
@@ -96,23 +97,20 @@ export default function TestimonialsCarousel() {
               size="icon"
               onClick={previous}
               className="text-white hover:bg-gray-800"
+              disabled={isAnimating}
             >
               <ChevronLeft className="h-6 w-6" />
             </Button>
 
             <div className="flex gap-2">
               {testimonials.map((_, index) => (
-                <>
-                  <button
-                    key={index}
-                    onClick={() => setActiveIndex(index)}
-                    className={`h-2 rounded-full transition-all ${
-                      index === activeIndex
-                        ? "w-8 bg-primary"
-                        : "w-2 bg-gray-600"
-                    }`}
-                  />
-                </>
+                <button
+                  key={index}
+                  onClick={() => !isAnimating && setActiveIndex(index)}
+                  className={`h-2 rounded-full transition-all ${
+                    index === activeIndex ? "w-8 bg-primary" : "w-2 bg-gray-600"
+                  }`}
+                />
               ))}
             </div>
 
@@ -121,6 +119,7 @@ export default function TestimonialsCarousel() {
               size="icon"
               onClick={next}
               className="text-white hover:bg-gray-800"
+              disabled={isAnimating}
             >
               <ChevronRight className="h-6 w-6" />
             </Button>
