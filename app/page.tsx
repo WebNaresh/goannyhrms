@@ -39,7 +39,7 @@ const Page: NextPage<Props> = async ({}) => {
             managing employees
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-6">
-            <Button size="lg">Try free for 12 days</Button>
+            <Button size="lg">Try free for 7 days</Button>
             <Button size="lg" variant="secondary">
               Learn more
             </Button>
@@ -154,7 +154,7 @@ const Page: NextPage<Props> = async ({}) => {
               </CardContent>
               <CardFooter>
                 <Button variant={"outline"} className="w-full mt-8 ">
-                  Try for 12 days
+                  Try for 7 days
                 </Button>
               </CardFooter>
             </Card>
@@ -220,7 +220,7 @@ const Page: NextPage<Props> = async ({}) => {
           many interesting features and can make it easier to manage business
           and internet games
         </p>
-        <Button size="lg">Try free for 12 days</Button>
+        <Button size="lg">Try free for 7 days</Button>
       </main>
 
       {/* Footer */}
