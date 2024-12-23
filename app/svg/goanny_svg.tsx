@@ -8,7 +8,7 @@ const GoannySvg = (props: Props) => {
       viewBox="0 0 718 138"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="relative left-80"
+      className="relative -left-40 h-16 sm:-left-0 md:left-40"
     >
       <g clipPath="url(#clip0_0_1)">
         <rect

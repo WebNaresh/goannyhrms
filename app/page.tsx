@@ -125,7 +125,7 @@ const Page: NextPage<Props> = async ({}) => {
           {/* Pricing Cards */}
           <div className="grid md:grid-cols-2 gap-6 relative">
             {/* Basic Plan */}
-            <Card className="bg-primary h-[400px]  border-0 flex flex-col relative !justify-between overflow-hidden">
+            <Card className="bg-primary h-fit md:h-[450px]  border-0 flex flex-col relative !justify-between overflow-hidden">
               <CardHeader className="pb-4">
                 <h3 className="text-lg font-medium text-white">BASIC PLAN</h3>
                 <div className="text-2xl font-bold mt-2 text-white">
@@ -160,7 +160,7 @@ const Page: NextPage<Props> = async ({}) => {
             </Card>
 
             {/* Pro Plan */}
-            <Card className="bg-[#1F2937] flex flex-col justify-between h-[400px]  border-0 relative overflow-hidden">
+            <Card className="bg-[#1F2937] flex flex-col justify-between h-fit md:h-[450px]  border-0 relative overflow-hidden">
               <div className="absolute -right-10 top-5 rotate-45 bg-primary px-12 py-1 text-sm">
                 Most Popular package
               </div>
@@ -227,6 +227,15 @@ const Page: NextPage<Props> = async ({}) => {
       <footer className="border-t">
         <div className="container mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
+            <div className="flex items-center relative">
+              <Image
+                src="/smartea.png"
+                alt="SmarTea HRMS"
+                width={200}
+                height={100}
+                className="w-full h-auto"
+              />
+            </div>
             <p className="text-gray-600 max-w-xs">
               Website and application-based human resource management platform
               for HR
