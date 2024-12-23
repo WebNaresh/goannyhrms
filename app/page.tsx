@@ -97,11 +97,11 @@ const Page: NextPage<Props> = async ({}) => {
           <div>
             <div className="space-y-4 max-w-2xl">
               <h1 className="text-5xl font-bold leading-tight">
-                The best feature with the best pricing package
+                Choose the plan that fits your needs
               </h1>
               <p className="text-zinc-400">
-                let&apos;s see the purchase packages we offer and choose
-                according to your needs
+                Compare our plans and select the one that best suits your
+                business requirements
               </p>
             </div>
 
@@ -128,7 +128,9 @@ const Page: NextPage<Props> = async ({}) => {
             <Card className="bg-primary h-[400px]  border-0 flex flex-col relative !justify-between overflow-hidden">
               <CardHeader className="pb-4">
                 <h3 className="text-lg font-medium text-white">BASIC PLAN</h3>
-                <div className="text-5xl font-bold mt-2 text-white">FREE</div>
+                <div className="text-2xl font-bold mt-2 text-white">
+                  Key Features:
+                </div>
                 <p className="text-blue-200 mt-4">
                   for this package is suitable for you a new user who wants to
                   try our application
@@ -138,11 +140,15 @@ const Page: NextPage<Props> = async ({}) => {
                 <ul className="space-y-4">
                   <li className="flex items-center gap-2 text-white">
                     <Check className="h-5 w-5 text-white" />
-                    <span>1 TB cloud storage</span>
+                    <span>Basic task management</span>
                   </li>
                   <li className="flex items-center gap-2 text-white">
                     <Check className="h-5 w-5 text-white" />
-                    <span>1 TB cloud storage</span>
+                    <span>Limited storage (5GB)</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-white">
+                    <Check className="h-5 w-5 text-white" />
+                    <span>Email support</span>
                   </li>
                 </ul>
               </CardContent>
@@ -160,7 +166,9 @@ const Page: NextPage<Props> = async ({}) => {
               </div>
               <CardHeader className="pb-4">
                 <h3 className="text-lg font-medium text-white">PRO PLAN</h3>
-                <div className="text-5xl font-bold mt-2 text-white">$32.00</div>
+                <div className="text-2xl font-bold mt-2 text-white">
+                  Advanced Features:
+                </div>
                 <p className="text-gray-300 mt-4">
                   for this package is suitable for business people who have many
                   tasks to handle it
@@ -170,15 +178,19 @@ const Page: NextPage<Props> = async ({}) => {
                 <ul className="space-y-4">
                   <li className="flex items-center gap-2 text-white">
                     <Check className="h-5 w-5 text-white" />
-                    <span>1 TB cloud storage</span>
+                    <span>Advanced task management</span>
                   </li>
                   <li className="flex items-center gap-2 text-white">
                     <Check className="h-5 w-5 text-white" />
-                    <span>1 TB cloud storage</span>
+                    <span>Unlimited storage</span>
                   </li>
                   <li className="flex items-center gap-2 text-white">
                     <Check className="h-5 w-5 text-white" />
-                    <span>1 TB cloud storage</span>
+                    <span>24/7 priority support</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-white">
+                    <Check className="h-5 w-5 text-white" />
+                    <span>Advanced analytics</span>
                   </li>
                 </ul>
               </CardContent>
