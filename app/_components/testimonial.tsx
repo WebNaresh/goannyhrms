@@ -10,16 +10,16 @@ const testimonials: TestimonialCardProps[] = [
   {
     quote:
       "We really like this platform. Our work becomes more efficient and orderly. Highly recommended!",
-    author: "John Doe, CEO",
+    author: "Megha Salve, HR",
   },
   {
     quote:
       "The platform has transformed how we work. Incredible efficiency gains!",
-    author: "Jane Smith, CTO",
+    author: "Sangram Kadam, CTO",
   },
   {
     quote: "Best decision we made for our workflow. Highly recommended!",
-    author: "Mike Johnson, Project Manager",
+    author: "Vivek Titarmare, Project Manager",
   },
 ];
 
