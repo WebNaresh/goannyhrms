@@ -10,6 +10,7 @@ import { NextPage } from "next";
 import Image from "next/image";
 import Navbar from "./_components/navbar";
 import TestimonialsCarousel from "./_components/testimonial";
+import ContactUsButton from "./organization/_components/contact-us-button";
 import GoannySvg, { InterestedSvg, UnderlineSvg } from "./svg/goanny_svg";
 
 interface Props {}
@@ -39,7 +40,7 @@ const Page: NextPage<Props> = async ({}) => {
             managing employees
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-6">
-            <Button size="lg">Try free for 7 days</Button>
+            <ContactUsButton />
             <Button size="lg" variant="secondary">
               Learn more
             </Button>
@@ -153,9 +154,7 @@ const Page: NextPage<Props> = async ({}) => {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button variant={"outline"} className="w-full mt-8 ">
-                  Try for 7 days
-                </Button>
+                <ContactUsButton variant={"secondary"} />
               </CardFooter>
             </Card>
 
@@ -220,7 +219,7 @@ const Page: NextPage<Props> = async ({}) => {
           many interesting features and can make it easier to manage business
           and internet games
         </p>
-        <Button size="lg">Try free for 7 days</Button>
+        <ContactUsButton variant={"outline"} />
       </main>
 
       {/* Footer */}
